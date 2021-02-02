@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		02A3EA8D25C7BCE10081A76B /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EA8C25C7BCE00081A76B /* Student.swift */; };
 		02A3EA9525C7BD1F0081A76B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EA9425C7BD1F0081A76B /* Course.swift */; };
+		02A3EA9D25C911C90081A76B /* QzAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EA9C25C911C90081A76B /* QzAPI.swift */; };
+		02A3EAA325C9124A0081A76B /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EAA225C9124A0081A76B /* CodableHelper.swift */; };
 		02A781EF25C666960056D390 /* CourserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A781EE25C666960056D390 /* CourserApp.swift */; };
 		02A781F125C666960056D390 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A781F025C666960056D390 /* ContentView.swift */; };
 		02A781F325C666980056D390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A781F225C666980056D390 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		02A3EA8C25C7BCE00081A76B /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		02A3EA9425C7BD1F0081A76B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		02A3EA9C25C911C90081A76B /* QzAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QzAPI.swift; sourceTree = "<group>"; };
+		02A3EAA225C9124A0081A76B /* CodableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
 		02A781EB25C666960056D390 /* Courser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Courser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A781EE25C666960056D390 /* CourserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourserApp.swift; sourceTree = "<group>"; };
 		02A781F025C666960056D390 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,9 +89,43 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		02A3EA9925C9103C0081A76B /* State */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		02A3EA9A25C9111F0081A76B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				02A3EA9B25C911950081A76B /* Qz */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		02A3EA9B25C911950081A76B /* Qz */ = {
+			isa = PBXGroup;
+			children = (
+				02A3EA9C25C911C90081A76B /* QzAPI.swift */,
+			);
+			path = Qz;
+			sourceTree = "<group>";
+		};
+		02A3EAA125C9121A0081A76B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				02A3EAA225C9124A0081A76B /* CodableHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		02A781E225C666960056D390 = {
 			isa = PBXGroup;
 			children = (
+				02A3EAA125C9121A0081A76B /* Utils */,
+				02A3EA9A25C9111F0081A76B /* API */,
+				02A3EA9925C9103C0081A76B /* State */,
 				02A3EA8B25C7BCBE0081A76B /* Model */,
 				02A781ED25C666960056D390 /* Courser */,
 				02A781FF25C666990056D390 /* CourserTests */,
@@ -276,6 +314,8 @@
 				02A3EA9525C7BD1F0081A76B /* Course.swift in Sources */,
 				02A781F125C666960056D390 /* ContentView.swift in Sources */,
 				02A3EA8D25C7BCE10081A76B /* Student.swift in Sources */,
+				02A3EA9D25C911C90081A76B /* QzAPI.swift in Sources */,
+				02A3EAA325C9124A0081A76B /* CodableHelper.swift in Sources */,
 				02A781EF25C666960056D390 /* CourserApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
