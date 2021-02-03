@@ -11,6 +11,10 @@
 		02A3EA9525C7BD1F0081A76B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EA9425C7BD1F0081A76B /* Course.swift */; };
 		02A3EA9D25C911C90081A76B /* QzAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EA9C25C911C90081A76B /* QzAPI.swift */; };
 		02A3EAA325C9124A0081A76B /* CodableHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EAA225C9124A0081A76B /* CodableHelper.swift */; };
+		02A3EAAB25CA64E40081A76B /* QzClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EAAA25CA64E40081A76B /* QzClient.swift */; };
+		02A3EAB025CA650E0081A76B /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EAAF25CA650E0081A76B /* AppError.swift */; };
+		02A3EAB525CA65A90081A76B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EAB425CA65A90081A76B /* Helper.swift */; };
+		02A3EABA25CA674C0081A76B /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EAB925CA674C0081A76B /* DateHelper.swift */; };
 		02A781EF25C666960056D390 /* CourserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A781EE25C666960056D390 /* CourserApp.swift */; };
 		02A781F125C666960056D390 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A781F025C666960056D390 /* ContentView.swift */; };
 		02A781F325C666980056D390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A781F225C666980056D390 /* Assets.xcassets */; };
@@ -41,6 +45,10 @@
 		02A3EA9425C7BD1F0081A76B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		02A3EA9C25C911C90081A76B /* QzAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QzAPI.swift; sourceTree = "<group>"; };
 		02A3EAA225C9124A0081A76B /* CodableHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableHelper.swift; sourceTree = "<group>"; };
+		02A3EAAA25CA64E40081A76B /* QzClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QzClient.swift; sourceTree = "<group>"; };
+		02A3EAAF25CA650E0081A76B /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		02A3EAB425CA65A90081A76B /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		02A3EAB925CA674C0081A76B /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		02A781EB25C666960056D390 /* Courser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Courser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A781EE25C666960056D390 /* CourserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourserApp.swift; sourceTree = "<group>"; };
 		02A781F025C666960056D390 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +100,7 @@
 		02A3EA9925C9103C0081A76B /* State */ = {
 			isa = PBXGroup;
 			children = (
+				02A3EAAF25CA650E0081A76B /* AppError.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -108,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				02A3EA9C25C911C90081A76B /* QzAPI.swift */,
+				02A3EAAA25CA64E40081A76B /* QzClient.swift */,
+				02A3EAB425CA65A90081A76B /* Helper.swift */,
 			);
 			path = Qz;
 			sourceTree = "<group>";
@@ -116,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				02A3EAA225C9124A0081A76B /* CodableHelper.swift */,
+				02A3EAB925CA674C0081A76B /* DateHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -314,6 +326,10 @@
 				02A3EA9525C7BD1F0081A76B /* Course.swift in Sources */,
 				02A781F125C666960056D390 /* ContentView.swift in Sources */,
 				02A3EA8D25C7BCE10081A76B /* Student.swift in Sources */,
+				02A3EAAB25CA64E40081A76B /* QzClient.swift in Sources */,
+				02A3EAB025CA650E0081A76B /* AppError.swift in Sources */,
+				02A3EABA25CA674C0081A76B /* DateHelper.swift in Sources */,
+				02A3EAB525CA65A90081A76B /* Helper.swift in Sources */,
 				02A3EA9D25C911C90081A76B /* QzAPI.swift in Sources */,
 				02A3EAA325C9124A0081A76B /* CodableHelper.swift in Sources */,
 				02A781EF25C666960056D390 /* CourserApp.swift in Sources */,
