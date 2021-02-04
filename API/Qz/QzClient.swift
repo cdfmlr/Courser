@@ -11,7 +11,7 @@ import Foundation
 /// 强智教务系统客户端
 ///
 /// 封装 QzAPI，透明处理登陆 token，并维护本地缓存。
-class QzClient: Codable {
+class QzClient: Codable, JwClient {
     /// 学生
     let student: Student
 
