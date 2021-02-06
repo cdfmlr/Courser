@@ -17,6 +17,7 @@ extension Course {
             teacher: qzAPIResponse.jsxm,
             startTime: qzAPIResponse.kssj,
             endTime: qzAPIResponse.jssj,
+            courseTime: qzAPIResponse.kcsj,
             courseWeeks: qzAPIResponse.kkzc,
             sjbz: qzAPIResponse.sjbz
         )

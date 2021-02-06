@@ -23,6 +23,13 @@ struct Course: Codable {
     let startTime: String
     /// 结束时间: jssj
     let endTime: String
+    /// 课程时间: kcsj
+    ///
+    /// 格式x0a0b，意为星期x的第a,b节上课
+    ///
+    /// e.g.
+    ///   "10506"
+    let courseTime: String
     /// 开课周次: kkzc
     ///
     /// 有三种已知格式:
@@ -34,4 +41,35 @@ struct Course: Codable {
     ///
     /// 我没见过，暂时不用这个
     let sjbz: String?
+}
+
+extension Course: Hashable {}
+
+extension Course {
+    /// courseTime 的自然语言描述: 星期x的第a,b节上课
+    var courseTimeDescription: String {
+        let regex = try! Regex("(\\d)(\\d{2})(\\d{2})")
+        let match = regex.firstMatch(in: self.courseTime)
+        // match: [weekday, firstSession, secondSession]
+        
+        return "星期\(match?.captures[0] ?? "nil")第\(match?.captures[1]  ?? "nil")、\(match?.captures[2]  ?? "nil")节"
+    }
+    
+    /// 课在周几
+    var courseWeekday: Int {
+        let regex = try! Regex("(\\d)\\d{2}\\d{2}")
+        let match = regex.firstMatch(in: self.courseTime)
+        // match: [weekday]
+        
+        return Int(match!.captures.first!!) ?? 0
+    }
+    
+    /// 课在第几节
+    var courseSessions: String {
+        let regex = try! Regex("\\d(\\d{2})(\\d{2})")
+        let match = regex.firstMatch(in: self.courseTime)
+        // match: [firstSession, secondSession]
+        
+        return "\(match?.captures[0]  ?? "nil")、\(match?.captures[1]  ?? "nil")"
+    }
 }
