@@ -107,7 +107,7 @@ struct CourseDetailView: View {
             .padding()
             .edgesIgnoringSafeArea(.horizontal)
 
-            // MARK: Complex Information
+            // MARK: - Complex Information
 
             VStack(alignment: .leading) {
                 HStack {
