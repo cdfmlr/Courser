@@ -45,31 +45,69 @@ struct Course: Codable {
 
 extension Course: Hashable {}
 
+// MARK: - 课在周几、第几节
+
 extension Course {
     /// courseTime 的自然语言描述: 星期x的第a,b节上课
     var courseTimeDescription: String {
         let regex = try! Regex("(\\d)(\\d{2})(\\d{2})")
-        let match = regex.firstMatch(in: self.courseTime)
+        let match = regex.firstMatch(in: courseTime)
         // match: [weekday, firstSession, secondSession]
-        
-        return "星期\(match?.captures[0] ?? "nil")第\(match?.captures[1]  ?? "nil")、\(match?.captures[2]  ?? "nil")节"
+
+        return "星期\(match?.captures[0] ?? "nil")第\(match?.captures[1] ?? "nil")、\(match?.captures[2] ?? "nil")节"
     }
-    
+
     /// 课在周几
     var courseWeekday: Int {
         let regex = try! Regex("(\\d)\\d{2}\\d{2}")
-        let match = regex.firstMatch(in: self.courseTime)
+        let match = regex.firstMatch(in: courseTime)
         // match: [weekday]
-        
+
         return Int(match!.captures.first!!) ?? 0
     }
-    
+
     /// 课在第几节
     var courseSessions: String {
         let regex = try! Regex("\\d(\\d{2})(\\d{2})")
-        let match = regex.firstMatch(in: self.courseTime)
+        let match = regex.firstMatch(in: courseTime)
         // match: [firstSession, secondSession]
-        
-        return "\(match?.captures[0]  ?? "nil")、\(match?.captures[1]  ?? "nil")"
+
+        return "\(match?.captures[0] ?? "nil")、\(match?.captures[1] ?? "nil")"
+    }
+}
+
+// MARK: - 判断某周是否上这个课
+
+extension Course {
+    /// 判断这个课程在某周次要上课不
+    /// - Parameter week: 周次
+    /// - Returns: Bool: 上课不上
+    func hasClass(at week: Int) -> Bool {
+        let parts = courseWeeks.split(separator: ",")
+
+        /// a-b 形
+        let regexAB = try! Regex("^(\\d*?)-(\\d*)$")
+        /// a 形
+        let regexA = try! Regex("^(\\d*?)$")
+
+        for part in parts {
+            if regexA.matches(String(part)) {  // a 形
+                let begin = Int(part)
+                if (begin ?? -1) == week {
+                    return true
+                }
+            } else if regexAB.matches(String(part)) { // a-b 形
+                let scanner = Scanner(string: String(part))
+                
+                let begin: Int = scanner.scanInt() ?? .min
+                let _ = scanner.scanCharacter()
+                let end: Int = scanner.scanInt() ?? .min
+                
+                if (begin <= week) && (week <= end) {
+                    return true
+                }
+            }
+        }
+        return false
     }
 }
