@@ -32,7 +32,12 @@ struct CourseViewModel: Identifiable, Hashable, Codable {
     
     /// 课在第几节
     var courseSessions: String {
-        "第\(course.courseSessions)节"
+        "第\(course.courseSessionsDescription)节"
+    }
+    
+    /// 课上几节
+    var length: Int {
+        course.courseSessions.1 - course.courseSessions.0 + 1
     }
 
     /// 图片

@@ -65,14 +65,19 @@ extension Course {
 
         return Int(match!.captures.first!!) ?? 0
     }
-
-    /// 课在第几节
-    var courseSessions: String {
+    
+    /// 课在第几节 [start, end]
+    var courseSessions: (Int, Int) {
         let regex = try! Regex("\\d(\\d{2})(\\d{2})")
         let match = regex.firstMatch(in: courseTime)
         // match: [firstSession, secondSession]
 
-        return "\(match?.captures[0] ?? "nil")、\(match?.captures[1] ?? "nil")"
+        return (Int(match?.captures[0] ?? "-1") ?? -1, Int(match?.captures[1] ?? "-1") ?? -1)
+    }
+
+    /// 课在第几节 "start、end"
+    var courseSessionsDescription: String {
+        "\(courseSessions.0)、\(courseSessions.1)"
     }
 }
 
@@ -109,5 +114,14 @@ extension Course {
             }
         }
         return false
+    }
+}
+
+// MARK: - Course.empty
+
+extension Course {
+    /// 空白的假课程
+    static var empty: Course {
+        .init(courseName: "", classroom: "", teacher: "", startTime: "", endTime: "", courseTime: "", courseWeeks: "", sjbz: "")
     }
 }
