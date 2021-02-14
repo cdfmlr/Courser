@@ -32,6 +32,8 @@
 		02A781F625C666980056D390 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A781F525C666980056D390 /* Preview Assets.xcassets */; };
 		02A7820125C666990056D390 /* CourserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7820025C666990056D390 /* CourserTests.swift */; };
 		02A7820C25C666990056D390 /* CourserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A7820B25C666990056D390 /* CourserUITests.swift */; };
+		02E9238F25D947650060F24D /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9238E25D947650060F24D /* SettingView.swift */; };
+		02E9239425D948100060F24D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E9239325D948100060F24D /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		02A7820725C666990056D390 /* CourserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CourserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A7820B25C666990056D390 /* CourserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourserUITests.swift; sourceTree = "<group>"; };
 		02A7820D25C666990056D390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02E9238E25D947650060F24D /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		02E9239325D948100060F24D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				02A3EAD725CD3E9D0081A76B /* ViewModel */,
 				02A3EA8C25C7BCE00081A76B /* Student.swift */,
 				02A3EA9425C7BD1F0081A76B /* Course.swift */,
+				02E9239325D948100060F24D /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				0253580325CF8DFA00E63AE5 /* CourseDetailView.swift */,
 				0253580D25CFDEF200E63AE5 /* CourseDailyView.swift */,
 				0272923425D77A6000789FDA /* CourseTableView.swift */,
+				02E9238E25D947650060F24D /* SettingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				02A3EA9525C7BD1F0081A76B /* Course.swift in Sources */,
 				0253580925CFA6CF00E63AE5 /* Regex.swift in Sources */,
 				02A3EAC825CD36BD0081A76B /* Sample.swift in Sources */,
+				02E9238F25D947650060F24D /* SettingView.swift in Sources */,
 				02A781F125C666960056D390 /* ContentView.swift in Sources */,
 				02A3EA8D25C7BCE10081A76B /* Student.swift in Sources */,
 				02A3EACD25CD37590081A76B /* FileHelper.swift in Sources */,
@@ -400,6 +407,7 @@
 				02A3EA9D25C911C90081A76B /* QzAPI.swift in Sources */,
 				0253580E25CFDEF200E63AE5 /* CourseDailyView.swift in Sources */,
 				02A3EAA325C9124A0081A76B /* CodableHelper.swift in Sources */,
+				02E9239425D948100060F24D /* Settings.swift in Sources */,
 				02A781EF25C666960056D390 /* CourserApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
