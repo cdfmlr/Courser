@@ -8,7 +8,19 @@
 import SwiftUI
 
 struct CourseDailyView: View {
-    let model: DailyViewModel
+    @EnvironmentObject var store: Store
+    
+    var courseDailyBinding: Binding<AppState.DailyState> {
+        $store.appState.courseDaily
+    }
+
+    var courseDaily: AppState.DailyState {
+        store.appState.courseDaily
+    }
+    
+    var model: DailyViewModel {
+        courseDaily.model
+    }
 
     var body: some View {
         NavigationView {
@@ -68,6 +80,6 @@ struct CourseDailyRow: View {
 // MARK: - Preview
 struct CourseDailyView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseDailyView(model: .sample(week: 12, weekday: 2))
+        CourseDailyView().environmentObject(Store())
     }
 }

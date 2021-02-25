@@ -9,7 +9,16 @@ import SwiftUI
 
 /// 一周的课程表
 struct CourseTableView: View {
-    let model: TableViewModel
+    @EnvironmentObject var store: Store
+    
+    var courseTableBinding: Binding<AppState.TableState> {
+        $store.appState.courseTable
+    }
+
+    var courseTable: AppState.TableState {
+        store.appState.courseTable
+    }
+    
 
     /// 一周有几天
     let weekdayNum = 7
@@ -68,7 +77,7 @@ extension CourseTableView {
             Text("周\(day)")
                 .frame(height: headerCellHeight)
 
-            ForEach(model.getCells(at: day), id: \.title) { cell in
+            ForEach(courseTable.model.getCells(at: day), id: \.title) { cell in
 
                 placeholderCell(heightGrid: cell.distancePrev, geometry: geometry)
 
@@ -113,6 +122,6 @@ extension CourseTableView {
 
 struct CourseTableView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseTableView(model: .sample(week: 12, today: nil))
+        CourseTableView().environmentObject(Store())
     }
 }

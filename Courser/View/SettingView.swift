@@ -8,7 +8,15 @@
 import SwiftUI
 
 struct SettingView: View {
-    @State var model: Settings
+    @EnvironmentObject var store: Store
+    
+    var settingsBinding: Binding<AppState.SettingsState> {
+        $store.appState.settings
+    }
+
+    var settings: AppState.SettingsState {
+        store.appState.settings
+    }
     
     var body: some View {
         Form {
@@ -19,8 +27,8 @@ struct SettingView: View {
     
     var accountSection: some View {
         Section(header: Text("教务账户")) {
-            TextField("学号", text: $model.account.sid)
-            TextField("密码", text: $model.account.password)
+            TextField("学号", text: settingsBinding.model.account.sid)
+            TextField("密码", text: settingsBinding.model.account.password)
             Button("登录测试") {
                 print("login")
             }
@@ -32,6 +40,6 @@ struct SettingView: View {
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingView(model: Settings())
+        SettingView().environmentObject(Store())
     }
 }
