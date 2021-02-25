@@ -12,6 +12,8 @@ struct AppState {
     var settings = SettingsState()
     var courseTable = TableState()
     var courseDaily = DailyState()
+    
+    var mainTab = MainTabState()
 }
 
 // MARK: - AppState.SettingsState
@@ -32,5 +34,16 @@ extension AppState {
 extension AppState {
     struct DailyState {
         var model: DailyViewModel = .sample(week: 12, weekday: 3)
+    }
+}
+
+// MARK: - AppState.MainTabState
+extension AppState {
+    struct MainTabState {
+        enum Index: Hashable {
+            case table, daily, settings
+        }
+        
+        var selection: Index = .daily
     }
 }

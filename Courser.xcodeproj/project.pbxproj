@@ -15,6 +15,7 @@
 		0272923A25D77BAF00789FDA /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0272923925D77BAF00789FDA /* TableViewModel.swift */; };
 		028462BF25E77732001B56A9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028462BE25E77732001B56A9 /* Store.swift */; };
 		028462C425E77760001B56A9 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028462C325E77760001B56A9 /* AppState.swift */; };
+		028462C925E77E83001B56A9 /* MainTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028462C825E77E83001B56A9 /* MainTab.swift */; };
 		02A3EA8D25C7BCE10081A76B /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EA8C25C7BCE00081A76B /* Student.swift */; };
 		02A3EA9525C7BD1F0081A76B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EA9425C7BD1F0081A76B /* Course.swift */; };
 		02A3EA9D25C911C90081A76B /* QzAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A3EA9C25C911C90081A76B /* QzAPI.swift */; };
@@ -64,6 +65,7 @@
 		0272923925D77BAF00789FDA /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		028462BE25E77732001B56A9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		028462C325E77760001B56A9 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		028462C825E77E83001B56A9 /* MainTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTab.swift; sourceTree = "<group>"; };
 		02A3EA8C25C7BCE00081A76B /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		02A3EA9425C7BD1F0081A76B /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		02A3EA9C25C911C90081A76B /* QzAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QzAPI.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				0253580D25CFDEF200E63AE5 /* CourseDailyView.swift */,
 				0272923425D77A6000789FDA /* CourseTableView.swift */,
 				02E9238E25D947650060F24D /* SettingView.swift */,
+				028462C825E77E83001B56A9 /* MainTab.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				02A3EAA325C9124A0081A76B /* CodableHelper.swift in Sources */,
 				02E9239425D948100060F24D /* Settings.swift in Sources */,
 				02A781EF25C666960056D390 /* CourserApp.swift in Sources */,
+				028462C925E77E83001B56A9 /* MainTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
