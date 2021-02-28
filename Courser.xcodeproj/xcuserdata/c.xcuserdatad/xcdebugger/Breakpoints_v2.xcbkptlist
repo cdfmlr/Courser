@@ -14,8 +14,8 @@
             filePath = "Courser/State/Store.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "reduce(state:action:)"
             landmarkType = "7">
          </BreakpointContent>

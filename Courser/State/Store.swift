@@ -16,27 +16,27 @@ class Store: ObservableObject {
 
     init() {
         autoLogin()
-        updateCurrentTime()
-        
+        updateCurrent()
+
         setupObservers()
     }
-    
+
     private func autoLogin() {
         guard let client = appState.client else {
             return
         }
         client.authPublisher
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: {_ in}, receiveValue: {auth in
+            .sink(receiveCompletion: { _ in }, receiveValue: { auth in
                 self.appState.settings.model.account = .init(
                     from: client.student
                 )
                 self.appState.settings.loginUser = auth
             }).store(in: &disposeBag)
-            
     }
 
-    private func updateCurrentTime() {
+    /// Update current time, courseTab, and courseDaily
+    private func updateCurrent() {
         guard let client = appState.client else {
             return
         }
@@ -46,6 +46,32 @@ class Store: ObservableObject {
                 receiveCompletion: { _ in },
                 receiveValue: { current in
                     print(current)
+                    self.appState.current = current
+                    client.coursesAt(
+                        week: current.zc,
+                        schoolTerm: current.xnxqh
+                    )
+                    .map { courses in
+                        courses.map { CourseViewModel(course: $0) }
+                    }
+                    .sink(
+                        receiveCompletion: { _ in },
+                        receiveValue: { models in
+                            let weekday = Date().weekday
+
+                            self.appState.courseTable.model = .init(
+                                week: current.zc ?? 0,
+                                today: weekday,
+                                from: models
+                            )
+
+                            self.appState.courseDaily.model = .init(
+                                week: current.zc ?? 0,
+                                weekday: weekday,
+                                from: models
+                            )
+                        }
+                    ).store(in: &self.disposeBag)
                 }
             ).store(in: &disposeBag)
     }

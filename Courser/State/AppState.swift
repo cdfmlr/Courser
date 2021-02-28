@@ -5,23 +5,29 @@
 //  Created by c on 2021/2/25.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 struct AppState {
     // Views
     var settings = SettingsState()
     var courseTable = TableState()
     var courseDaily = DailyState()
-    
+
     var mainTab = MainTabState()
-    
+
     // Qz Client
     @FileStorage(directory: .cachesDirectory, fileName: "qzclient.json")
     var client: QzClient?
+
+    @FileStorage(directory: .cachesDirectory, fileName: "current.json")
+    var current: QzClient.CurrentTime.CurrentTimeEntry?
+
+//    var courseViewModels: [CourseViewModel]? = nil
 }
 
 // MARK: - AppState.SettingsState
+
 extension AppState {
     struct SettingsState {
         var model: Settings = Settings()
@@ -32,6 +38,7 @@ extension AppState {
 }
 
 // MARK: - AppState.TableState
+
 extension AppState {
     struct TableState {
         var model: TableViewModel = .sample(week: 12, today: 3)
@@ -39,6 +46,7 @@ extension AppState {
 }
 
 // MARK: - AppState.DailyState
+
 extension AppState {
     struct DailyState {
         var model: DailyViewModel = .sample(week: 12, weekday: 3)
@@ -46,12 +54,13 @@ extension AppState {
 }
 
 // MARK: - AppState.MainTabState
+
 extension AppState {
     struct MainTabState {
         enum Index: Hashable {
             case table, daily, settings
         }
-        
+
         var selection: Index = .daily
     }
 }

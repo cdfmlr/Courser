@@ -43,3 +43,16 @@ extension Date {
         return result > 7 ? false : true
     }
 }
+
+// MARK: - 星期几
+// From: https://medium.com/%E5%BD%BC%E5%BE%97%E6%BD%98%E7%9A%84-swift-ios-app-%E9%96%8B%E7%99%BC%E5%95%8F%E9%A1%8C%E8%A7%A3%E7%AD%94%E9%9B%86/%E8%AB%8B%E5%95%8F-swift-%E5%A4%A7%E5%A4%A7-%E4%BB%8A%E5%A4%A9%E6%98%9F%E6%9C%9F%E5%B9%BE-bf2935e33b6
+extension Date {
+    /// 星期几
+    var weekday: Int {
+        Calendar.current
+            .dateComponents(
+                in: TimeZone.current,
+                from: self
+            ).weekday!
+    }
+}
