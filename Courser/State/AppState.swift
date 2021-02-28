@@ -9,17 +9,25 @@ import Foundation
 import Combine
 
 struct AppState {
+    // Views
     var settings = SettingsState()
     var courseTable = TableState()
     var courseDaily = DailyState()
     
     var mainTab = MainTabState()
+    
+    // Qz Client
+    @FileStorage(directory: .cachesDirectory, fileName: "qzclient.json")
+    var client: QzClient?
 }
 
 // MARK: - AppState.SettingsState
 extension AppState {
     struct SettingsState {
         var model: Settings = Settings()
+        var logining: Bool = false
+        var loginError: AppError? = nil
+        var loginUser: QzAPI.AuthUser.Response? = nil
     }
 }
 

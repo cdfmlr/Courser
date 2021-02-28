@@ -11,7 +11,8 @@ import SwiftUI
 struct CourserApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTab()
+                .environmentObject(Store())
         }
     }
 }

@@ -93,7 +93,12 @@ class QzClient: Codable, JwClient {
             pwd: student.password
         ).publisher
             .print("[authPublisher.QzAPI]")
-            .mapError { _ in AppError.networkError }
+            .mapError { err in
+                #if DEBUG
+                    print(err)
+                #endif
+                return AppError.networkError
+            }
             .map { auth in // 缓存 auth
                 self.loggedIn = auth
                 return auth
