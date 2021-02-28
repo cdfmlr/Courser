@@ -14,7 +14,12 @@ struct Settings {
 // MARK: - Account
 extension Settings {
     class Account {
+        @Published var school = ""
         @Published var sid = ""
         @Published var password = ""
+        
+        var student: Student {
+            Student(school: school, sid: sid, password: password)
+        }
     }
 }

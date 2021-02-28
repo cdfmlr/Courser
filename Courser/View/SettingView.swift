@@ -27,9 +27,10 @@ struct SettingView: View {
     
     var accountSection: some View {
         Section(header: Text("教务账户")) {
+            TextField("学校", text: settingsBinding.model.account.school)
             TextField("学号", text: settingsBinding.model.account.sid)
             TextField("密码", text: settingsBinding.model.account.password)
-            Button("登录测试") {
+            Button("登录") {
                 print("login")
             }
             .frame(maxWidth: .infinity, alignment: .center)
