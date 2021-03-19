@@ -10,4 +10,5 @@ import Foundation
 enum AppAction {
     case login(student: Student)
     case loginDone(result: Result<QzClient, AppError>)
+//    case addCalendar(course: Course)
 }

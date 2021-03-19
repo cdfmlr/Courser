@@ -125,3 +125,9 @@ extension Course {
         .init(courseName: "", classroom: "", teacher: "", startTime: "", endTime: "", courseTime: "", courseWeeks: "", sjbz: "")
     }
 }
+
+extension Course {
+    func realDate(termStart: Date) {
+        
+    }
+}
